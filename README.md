@@ -11,12 +11,12 @@ Um jogo educativo web voltado para alunos do ensino médio, projetado para ensin
 
 ## 🎮 Estrutura do Jogo
 
-O jogo é dividido em quatro fases, cada uma focada em um dos tópicos principais:
+O jogo é dividido em quatro fases, cada uma com um quiz interativo para explorar diferentes conceitos matemáticos:
 
-1. **Fase 1: Templo dos Conjuntos** - Desafios interativos com diagramas de Venn
-2. **Fase 2: Caverna das Relações** (em desenvolvimento)
-3. **Fase 3: Torre das Funções** (em desenvolvimento)
-4. **Fase 4: Vale das Sequências** (em desenvolvimento)
+1. **Fase 1: Templo dos Conjuntos** - Classificação de elementos em diagramas de Venn, explorando união, interseção e subconjuntos.
+2. **Fase 2: Caverna das Relações** - Identificação de propriedades de relações (reflexiva, simétrica, transitiva e equivalência).
+3. **Fase 3: Torre das Funções** - Classificação de funções quanto às propriedades (injetora, sobrejetora e bijetora).
+4. **Fase 4: Vale das Sequências** - Análise de sequências numéricas (PA e PG) e cálculo de termos subsequentes.
 
 ## 🖥️ Tecnologias Utilizadas
 
@@ -48,10 +48,10 @@ O jogo foi desenvolvido com foco em:
 
 ## 🚀 Próximos Passos
 
-- Implementação das fases 2, 3 e 4
-- Sistema de pontuação e conquistas
-- Mais desafios para cada fase
-- Melhorias de acessibilidade
+- Implementar sistema de pontuação e conquistas
+- Criar mais variações de desafios para cada fase
+- Adicionar animações e transições para enriquecer a experiência
+- Melhorar acessibilidade (suporte a leitores de tela e navegação por teclado)
 
 ## 📝 Licença
 
