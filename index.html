@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio da Ilha Lógica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Tela de boas-vindas -->
+        <div id="welcome-screen" class="screen">
+            <h1>Desafio da Ilha Lógica</h1>
+            <p>Uma aventura matemática pelo mundo dos conjuntos, relações, funções e sequências numéricas</p>
+            <button id="start-btn" class="btn">Iniciar Aventura</button>
+        </div>
+
+        <!-- Menu principal -->
+        <div id="main-menu" class="screen hidden">
+            <h2>Escolha seu desafio</h2>
+            <div class="menu-options">
+                <button id="level1-btn" class="level-btn">Fase 1: Templo dos Conjuntos</button>
+                <button id="level2-btn" class="level-btn">Fase 2: Caverna das Relações</button>
+                <button id="level3-btn" class="level-btn">Fase 3: Torre das Funções</button>
+                <button id="level4-btn" class="level-btn">Fase 4: Vale das Sequências</button>
+            </div>
+        </div>
+
+        <!-- Fase 1: Templo dos Conjuntos -->
+        <div id="level1-screen" class="screen hidden">
+            <div class="level-header">
+                <h2>Templo dos Conjuntos</h2>
+                <button id="back-to-menu" class="btn back-to-menu">Voltar ao Menu</button>
+            </div>
+            
+            <div class="level-content">
+                <div class="level-instructions">
+                    <p>Arraste os elementos para as regiões corretas do diagrama de Venn.</p>
+                    <p id="current-challenge-text">Desafio: Classifique os números em conjuntos A (pares) e B (múltiplos de 3)</p>
+                </div>
+                
+                <div class="game-area">
+                    <div id="venn-diagram">
+                        <div id="set-a" class="set">
+                            <span class="set-label">A</span>
+                        </div>
+                        <div id="set-b" class="set">
+                            <span class="set-label">B</span>
+                        </div>
+                        <div id="intersection" class="set"></div>
+                        <div id="universe" class="set"></div>
+                    </div>
+                    
+                    <div id="elements-container">
+                        <!-- Os elementos serão adicionados dinamicamente via JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="check-answer-btn" class="btn">Verificar Resposta</button>
+                    <button id="next-challenge-btn" class="btn hidden">Próximo Desafio</button>
+                </div>
+                
+                <div id="feedback" class="hidden">
+                    <p id="feedback-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fase 2: Caverna das Relações -->
+        <div id="level2-screen" class="screen hidden">
+            <div class="level-header">
+                <h2>Caverna das Relações</h2>
+                <button class="btn back-to-menu">Voltar ao Menu</button>
+            </div>
+            <div class="level-content">
+                <div class="level-instructions">
+                    <p>Identifique quais propriedades cada relação possui.</p>
+                    <p id="relation-challenge-text">Desafio: Analise a relação e marque suas propriedades.</p>
+                </div>
+                
+                <div class="game-area">
+                    <div id="relation-display">
+                        <div id="relation-definition"></div>
+                        <div id="relation-visual"></div>
+                    </div>
+                    
+                    <div id="relation-properties">
+                        <div class="property-checkbox">
+                            <input type="checkbox" id="reflexive" name="reflexive">
+                            <label for="reflexive">Reflexiva</label>
+                        </div>
+                        <div class="property-checkbox">
+                            <input type="checkbox" id="symmetric" name="symmetric">
+                            <label for="symmetric">Simétrica</label>
+                        </div>
+                        <div class="property-checkbox">
+                            <input type="checkbox" id="transitive" name="transitive">
+                            <label for="transitive">Transitiva</label>
+                        </div>
+                        <div class="property-checkbox">
+                            <input type="checkbox" id="equivalence" name="equivalence">
+                            <label for="equivalence">Equivalência</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="check-relation-btn" class="btn">Verificar Resposta</button>
+                    <button id="next-relation-btn" class="btn hidden">Próximo Desafio</button>
+                </div>
+                
+                <div id="relation-feedback" class="feedback hidden">
+                    <p id="relation-feedback-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fase 3: Torre das Funções -->
+        <div id="level3-screen" class="screen hidden">
+            <div class="level-header">
+                <h2>Torre das Funções</h2>
+                <button class="btn back-to-menu">Voltar ao Menu</button>
+            </div>
+            <div class="level-content">
+                <div class="level-instructions">
+                    <p>Classifique a função apresentada de acordo com suas propriedades.</p>
+                    <p id="function-challenge-text">Desafio: Analise a função e marque suas propriedades.</p>
+                </div>
+                
+                <div class="game-area">
+                    <div id="function-display">
+                        <div id="function-definition"></div>
+                        <div id="function-visual" class="function-mapping"></div>
+                    </div>
+                    
+                    <div id="function-properties">
+                        <div class="property-checkbox">
+                            <input type="checkbox" id="injective" name="injective">
+                            <label for="injective">Injetora</label>
+                        </div>
+                        <div class="property-checkbox">
+                            <input type="checkbox" id="surjective" name="surjective">
+                            <label for="surjective">Sobrejetora</label>
+                        </div>
+                        <div class="property-checkbox">
+                            <input type="checkbox" id="bijective" name="bijective">
+                            <label for="bijective">Bijetora</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="check-function-btn" class="btn">Verificar Resposta</button>
+                    <button id="next-function-btn" class="btn hidden">Próximo Desafio</button>
+                </div>
+                
+                <div id="function-feedback" class="feedback hidden">
+                    <p id="function-feedback-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fase 4: Vale das Sequências -->
+        <div id="level4-screen" class="screen hidden">
+            <div class="level-header">
+                <h2>Vale das Sequências</h2>
+                <button class="btn back-to-menu">Voltar ao Menu</button>
+            </div>
+            <div class="level-content">
+                <div class="level-instructions">
+                    <p>Identifique o tipo de sequência e encontre os próximos elementos.</p>
+                    <p id="sequence-challenge-text">Desafio: Analise a sequência e complete-a.</p>
+                </div>
+                
+                <div class="game-area">
+                    <div id="sequence-display">
+                        <div id="sequence-terms"></div>
+                    </div>
+                    
+                    <div id="sequence-inputs">
+                        <div class="sequence-type">
+                            <input type="radio" id="pa" name="sequence-type" value="pa">
+                            <label for="pa">Progressão Aritmética (PA)</label>
+                        </div>
+                        <div class="sequence-type">
+                            <input type="radio" id="pg" name="sequence-type" value="pg">
+                            <label for="pg">Progressão Geométrica (PG)</label>
+                        </div>
+                        
+                        <div id="next-terms">
+                            <p>Próximos termos:</p>
+                            <div class="term-inputs">
+                                <input type="number" class="next-term" id="term1">
+                                <input type="number" class="next-term" id="term2">
+                                <input type="number" class="next-term" id="term3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="check-sequence-btn" class="btn">Verificar Resposta</button>
+                    <button id="next-sequence-btn" class="btn hidden">Próximo Desafio</button>
+                </div>
+                
+                <div id="sequence-feedback" class="feedback hidden">
+                    <p id="sequence-feedback-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
