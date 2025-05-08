@@ -55,7 +55,7 @@ O jogo foi desenvolvido com foco em:
 
 ## 📝 Licença
 
-Este projeto é para fins educacionais.
+Projeto desenvolvido com fins acadêmicos, voltado para a disciplina de **Resolução de Problemas (Matemática Discreta)**.
 
 ---
 
